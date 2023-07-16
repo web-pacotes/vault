@@ -8,25 +8,62 @@ A small, token based container designed for dependency injection 🫙
 
 ## How to use
 
-todo: describe usage
+Using Vault to store and lookup dependencies is as simple as:
 
 ```typescript
-todo: include usage code here
-```
+// Create a vault
+const vault = new Vault();
 
-Additionally, you can A small, token based container designed for dependency injection 🫙. Execute the following command for more info:
+// Create some tokens
+const token = 'my cool token';
 
-```bash
-vault --help
+// Store dependencies!
+vault.store('my secret message', token);
+
+// Look them up at some point in your program
+const dependency = vault.lookup<string>(token);
+
+// It should print "just lookup this dependency: my secret message"
+console.info(`just lookup this dependency: ${dependency}`);
 ```
 
 ## Features
 
-todo: enumerate features package currently provides
+- Store primitive and non-primitive dependencies
+- Prevent store nullable or undefined values
+- Type inferred lookups
 
-### Upcoming features
+## Why should I use Vault?
 
-todo: enumerate features package does not provide
+If you're working in a *context* based environment and you want to retrieve dependencies based on the context state, then Vault was designed for you. Simply register the vault instance to your context and get the dependencies in some point in your app after. Here's an example on how you can use in SvelteKit:
+
+```typescript
+// src/routes/+page.ts
+
+export const load = (async () => {
+    const dependency = new AuthenticationRepositoryImpl(...);
+    const vault = new Vault();
+
+    vault.store(dependency, 'AuthenticationRepository');
+
+    setContext('vault', dependency);
+});
+
+...
+
+// src/lib/components/AuthenticationStore.ts
+
+const { value } = getContext('vault');
+const authenticationRepo = vault.lookup<AuthenticationRepository>('AuthenticationRepository');
+
+const store = writable<AuthenticationState>();
+
+return {
+    store.subscribe,
+    authenticate: () => authenticationRepo.loginAnonymously(),
+};
+
+```
 
 ---
 
@@ -38,12 +75,3 @@ GitHub in order to track each contribution. Also, pull requests are very
 welcome!
 
 To contribute, start by setting up your local development environment. The [setup.md](setup.md) document will onboard you on how to do so!
-
-## Contact
-
-This template was prepared by:
-
-- João Freitas, @freitzzz
-- Rute Santos, @rutesantos4
-
-Contact us for freelancing work!
