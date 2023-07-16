@@ -1,6 +1,6 @@
 # vault
 
-A small, type inferred container designed for dependency injection 🫙
+A small, token based container designed for dependency injection 🫙
 
 ![npm version](https://badgen.net/npm/v/@web-pacotes/vault) ![npm total downloads](https://badgen.net/npm/dt/@web-pacotes/vault) ![bundlephobia bundle size](https://badgen.net/bundlephobia/min/@web-pacotes/vault)
 
@@ -14,7 +14,7 @@ todo: describe usage
 todo: include usage code here
 ```
 
-Additionally, you can a small, type inferred container designed for dependency injection 🫙. Execute the following command for more info:
+Additionally, you can A small, token based container designed for dependency injection 🫙. Execute the following command for more info:
 
 ```bash
 vault --help

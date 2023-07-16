@@ -1,7 +1,7 @@
 {
 	"name": "@web-pacotes/vault",
 	"version": "0.0.0",
-	"description": "A small, type inferred container designed for dependency injection 🫙",
+	"description": "A small, token based container designed for dependency injection 🫙",
 	"main": "dist/index.js",
 	"module": "dist/index.cjs",
 	"types": "dist/index.d.ts",
@@ -22,12 +22,17 @@
 		"url": "git+https://github.com/web-pacotes/vault.git"
 	},
 	"keywords": [
+		"react",
+		"nodejs",
+		"angular",
 		"typescript",
-		"dependency injection",
+		"vue",
+		"vault",
+		"dependency-injection",
 		"container",
-		"web-pacotes",
+		"svelte",
 		"di",
-		"vault"
+		"web-pacotes"
 	],
 	"author": "web-pacotes",
 	"license": "none",
