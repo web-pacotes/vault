@@ -35,7 +35,7 @@ console.info(`just lookup this dependency: ${dependency}`);
 
 ## Why should I use Vault?
 
-If you're working in a _context_ based environment and you want to retrieve dependencies based on the context state, then Vault was designed for you. Simply register the vault instance to your context and get the dependencies in some point in your app after. Here's an example on how you can use in SvelteKit:
+If you're working in a _context_ based environment and you want to retrieve dependencies based on the context state, then Vault was designed for you. Simply register the vault instance to your context and get the dependencies in some point in your app after. Here's an example on how you can use it in SvelteKit:
 
 ```typescript
 // src/routes/+page.ts
