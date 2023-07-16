@@ -1,10 +1,10 @@
 /**
- * A token used to identify a dependency. Can either be a plain string or a {@link symbol}.
+ * A token used to identify a dependency. Can either be a plain string or a symbol.
  */
 export type Token = string | symbol;
 
 /**
- * Specifies a dependency that can be stored in a container. Typed to {@link unknown}, so even primitives can be stored.
+ * Specifies a dependency that can be stored in a container. Typed to unknown, so even primitives can be stored.
  */
 export type Dependency = unknown;
 
